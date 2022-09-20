@@ -1,0 +1,19 @@
+.form-createpost{
+    background-color: #d9d7d7;
+    color: black;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+.form-createpost input{
+    padding: 15px 15px;
+}
+.form-createpost button{
+    background-color: #0081ff;
+    color: white;
+    padding: 15px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
