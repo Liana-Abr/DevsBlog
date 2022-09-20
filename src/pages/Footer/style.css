@@ -1,0 +1,14 @@
+footer {
+    height: 90px;
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px 0 #0003;
+}
+@media (min-width: 1260px) {
+    footer {
+        padding-left: calc(50% - 600px);
+        padding-right: calc(50% - 600px);
+    }
+}

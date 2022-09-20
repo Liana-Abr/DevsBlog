@@ -1,0 +1,6 @@
+@media (min-width: 1260px) {
+  main {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+  }
+}

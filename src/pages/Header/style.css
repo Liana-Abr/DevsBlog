@@ -1,0 +1,18 @@
+header {
+  height: 90px;
+  display: flex;
+  padding: 30px;
+  box-shadow: 0 0 5px 0 #0003;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__btn {
+  padding-left: 10px;
+}
+
+@media (min-width: 1260px) {
+  header {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+  }
+}

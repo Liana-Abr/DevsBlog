@@ -1,0 +1,37 @@
+[
+  {
+    "name": "День первый",
+    "description": "Когда мы только приехали на этот осторов, он был очень красивый и дружелюбный. В небо устремлялись высокие пальмы, которые омывались лазурным океаном. Песок был настолько мягкий Что в нем легко можно было купаться.",
+    "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
+    "author": "DreamLady",
+    "createdAt": "2022-09-05"
+  },
+  {
+    "name": "День второй",
+    "description": "Когда мы только приехали на этот осторов, он был очень красивый и дружелюбный. В небо устремлялись высокие пальмы, которые омывались лазурным океаном. Песок был настолько мягкий Что в нем легко можно было купаться.",
+    "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
+    "author": "DreamLady",
+    "createdAt": "2022-09-06"
+  },
+  {
+    "name": "День третий",
+    "description": "Когда мы только приехали на этот осторов, он был очень красивый и дружелюбный. В небо устремлялись высокие пальмы, которые омывались лазурным океаном. Песок был настолько мягкий Что в нем легко можно было купаться.",
+    "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
+    "author": "DreamLady",
+    "createdAt": "2022-09-07"
+  },
+  {
+    "name": "День четвертый",
+    "description": "Когда мы только приехали на этот осторов, он был очень красивый и дружелюбный. В небо устремлялись высокие пальмы, которые омывались лазурным океаном. Песок был настолько мягкий Что в нем легко можно было купаться.",
+    "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
+    "author": "DreamLady",
+    "createdAt": "2022-09-08"
+  },
+  {
+    "name": "День пятый",
+    "description": "Когда мы только приехали на этот осторов, он был очень красивый и дружелюбный. В небо устремлялись высокие пальмы, которые омывались лазурным океаном. Песок был настолько мягкий Что в нем легко можно было купаться.",
+    "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
+    "author": "DreamLady",
+    "createdAt": "2022-09-09"
+  }
+]
