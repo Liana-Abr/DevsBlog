@@ -1,9 +1,20 @@
-.search{
-    width: 30%;
-    margin: 0 0 40px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-.search-icon{
-
-}
+form {
+    width:400px;
+    margin:auto;
+    margin-top: 250px;
+    }
+input{
+    padding:4px 10px;
+    border:0;
+    font-size:16px;
+    }
+.search {
+    width: 75%;
+    border-color:black;
+    }
+.submit{
+    width: 70px;
+    background-color: #1c87c9;
+    color:#ffffff;
+    cursor: pointer;
+    }
