@@ -4,7 +4,7 @@ export default () => {
   return (
     <div>
       <h1>Тут можно создать пост</h1>
-        <form className="form-createpost" action="" >
+      <form className="form-createpost" action="" >
             <input type="text" name="name" placeholder="Название"  />
             <br />
             <input type="text" name="description" placeholder="Описание"  />
