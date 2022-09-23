@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import Modal from "../../Modal";
+import {Ctx} from "../../App";
 
 export default () => {
     const [modalView, setModal] = useState(false);
+    const [modalAuth, setModalAuth] = useState(true);
+    const {userName} = useContext(Ctx);
   return (
     <header>
       <a href="/" className="header__logo">
@@ -24,29 +27,37 @@ export default () => {
           Создать пост
         </Link>
 
+
+
+
         {/*<Link to="/profile" className="header__btn">*/}
         {/*  Профиль*/}
         {/*</Link>*/}
-
-          <Link to="/auth"  className="header__btn" 
+        {!userName && <Link to="/login" 
+        className="header__btn" 
           onClick={(e)=> {
             e.preventDefault();
             setModal(!modalView);
+            setModalAuth(true)
+          }}>
+              Войти
+          </Link>}
+
+         {!userName && <Link to="/auth"  className="header__btn" 
+          onClick={(e)=> {
+            e.preventDefault();
+            setModal(!modalView);
+            setModalAuth(false)
           }}>
 
               Зарегистрироваться
-          </Link>
+          </Link>}
 
-          <Link to="/login" 
-          className="header__btn" 
-          onClick={(e)=> {
-            e.preventDefault();
-            setModal(!modalView);
-          }}>
-              Войти
-          </Link>
+          {userName && <a>{userName}</a>}
+          {userName && <a>Log Out</a>}
       </nav>
-        {<Modal state={modalView ? "active" : ""}/>}
+     
+      {<Modal state={modalView} auth={modalAuth} updState={setModal}/>}
     </header>
   );
 };
