@@ -6,13 +6,33 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.header__menu{
+  gap: 10px;
+}
 .header__btn {
   padding-left: 10px;
 }
 
+.modal__container{
+  position: fixed;
+  background-color: #0004;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal{
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+}
 @media (min-width: 1260px) {
   header {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
   }
 }
+

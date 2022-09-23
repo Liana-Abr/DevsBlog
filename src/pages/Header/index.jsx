@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import Modal from "../../Modal";
 
 export default () => {
+    const [modalView, setModal] = useState(false);
   return (
     <header>
       <a href="/" className="header__logo">
@@ -22,10 +24,29 @@ export default () => {
           Создать пост
         </Link>
 
-        <Link to="/profile" className="header__btn">
-          Профиль
-        </Link>
+        {/*<Link to="/profile" className="header__btn">*/}
+        {/*  Профиль*/}
+        {/*</Link>*/}
+
+          <Link to="/auth"  className="header__btn" 
+          onClick={(e)=> {
+            e.preventDefault();
+            setModal(!modalView);
+          }}>
+
+              Зарегистрироваться
+          </Link>
+
+          <Link to="/login" 
+          className="header__btn" 
+          onClick={(e)=> {
+            e.preventDefault();
+            setModal(!modalView);
+          }}>
+              Войти
+          </Link>
       </nav>
+        {<Modal state={modalView ? "active" : ""}/>}
     </header>
   );
 };
