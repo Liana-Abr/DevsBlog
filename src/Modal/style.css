@@ -1,4 +1,4 @@
-.modal__container{
+.modal__container {
   position: fixed;
   background-color: #0004;
   top: 0;
@@ -9,8 +9,9 @@
   justify-content: center;
   align-items: center;
 }
-.modal{
+.modal {
   background-color: #fff;
   padding: 20px;
-  /* width: 300px; */
+  width: 300px;
+
 }

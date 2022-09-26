@@ -6,6 +6,10 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.header__logo{
+  font-weight: bold;
+  font-size: 25px;
+}
 .header__menu{
   gap: 10px;
 }

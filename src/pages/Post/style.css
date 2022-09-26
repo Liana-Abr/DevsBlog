@@ -28,6 +28,10 @@ h1 {
   position: relative;
   overflow: hidden;
 }
+.post__block span{
+  padding: 10px;
+  font-weight: bold;
+}
 .post > * {
   position: relative;
   z-index: 2;

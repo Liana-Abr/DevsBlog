@@ -27,12 +27,10 @@ export default () => {
           Создать пост
         </Link>
 
-
-
-
-        {/*<Link to="/profile" className="header__btn">*/}
-        {/*  Профиль*/}
-        {/*</Link>*/}
+        <Link to="/profile" className="header__btn">
+          Профиль
+        </Link>
+      
         {!userName && <Link to="/login" 
         className="header__btn" 
           onClick={(e)=> {
