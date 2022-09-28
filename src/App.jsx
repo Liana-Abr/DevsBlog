@@ -2,7 +2,7 @@ import React, {createContext,useState} from "react";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
 import Footer from "./pages/Footer";
-
+import Api from "../api"
 export const Ctx = createContext({})
 
 export const App = () => {
@@ -15,6 +15,7 @@ export const App = () => {
       db: db,
       userId: userId,
       userName: userName,
+      api: new Api(),
       updDb: updDb,
       updUId: setUserId,
       updUName: setUserName
