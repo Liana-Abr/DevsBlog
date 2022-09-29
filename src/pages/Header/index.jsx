@@ -4,10 +4,20 @@ import { Link } from "react-router-dom";
 import Modal from "../../Modal";
 import {Ctx} from "../../App";
 
+
 export default () => {
     const [modalView, setModal] = useState(false);
     const [modalAuth, setModalAuth] = useState(true);
-    const {userName} = useContext(Ctx);
+    const {userId,userName, updUId, updUName} = useContext(Ctx);
+
+    const logOut = (e) =>{
+      e.preventDefault();
+      updUId("");
+      updUName("");
+      localStorage.removeItem("userId");
+      localStorage.removeItem("author");
+    }
+
   return (
     <header>
       <a href="/" className="header__logo">
@@ -27,11 +37,20 @@ export default () => {
           Создать пост
         </Link>
 
-        <Link to="/profile" className="header__btn">
+        {/* {!userName && <Link to="/profile"  className="header__btn" 
+          onClick={(e)=> {
+            e.preventDefault();
+            
+          }}>
+
+              Профиль
+          </Link>} */}
+
+        {/* <Link to="/profile" className="header__btn">
           Профиль
         </Link>
-      
-        {!userName && <Link to="/login" 
+       */}
+        {!userId && <Link to="/login" 
         className="header__btn" 
           onClick={(e)=> {
             e.preventDefault();
@@ -41,7 +60,7 @@ export default () => {
               Войти
           </Link>}
 
-         {!userName && <Link to="/auth"  className="header__btn" 
+         {!userId && <Link to="/auth"  className="header__btn" 
           onClick={(e)=> {
             e.preventDefault();
             setModal(!modalView);
@@ -51,8 +70,8 @@ export default () => {
               Зарегистрироваться
           </Link>}
 
-          {userName && <a>{userName}</a>}
-          {userName && <a>Log Out</a>}
+          {userId && <a href="/">{userName}</a>}
+          {userId && <a href="/" onClick={logOut}>Log Out</a>}
       </nav>
      
       {<Modal state={modalView} auth={modalAuth} updState={setModal}/>}

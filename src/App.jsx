@@ -6,9 +6,9 @@ import Api from "../api"
 export const Ctx = createContext({})
 
 export const App = () => {
-  const [db,updDb] = useState(JSON.parse(localStorage.getItem("db") || "[]"))
-  const [userId,setUserId] = useState(localStorage.getItem("userId") || "")
-  const [userName,setUserName] = useState(localStorage.getItem("userName") || "")
+  const [db,updDb] = useState(JSON.parse(localStorage.getItem("db") || "[]"));
+  const [userId,setUserId] = useState(localStorage.getItem("userId") || "");
+  const [userName,setUserName] = useState(localStorage.getItem("author") || "");
 
   return (
     <Ctx.Provider value={{

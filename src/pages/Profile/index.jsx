@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "../Post";
 import "./style.css"
-import posts from "../../data/posts.json";
+// import posts from "../../data/posts.json";
 export default () => {
   return (
     <div>
@@ -14,7 +14,7 @@ export default () => {
       </div>
       <div className="profile-post-container">
         <h2>Все посты</h2>
-        <Post data={posts}/>
+        {/* <Post data={posts}/> */}
       </div>
     </div>
   );

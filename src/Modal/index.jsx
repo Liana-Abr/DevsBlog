@@ -8,51 +8,91 @@ export default ({state, auth, updState}) => {
     const [pwd, setPwd] = useState("");
     const [pwd2, setPwd2] = useState("");
     const [authType,setAuthType] = useState(auth);
-    const {db, updDb, updUName, updUId} = useContext(Ctx);
-
-
+    const {db, updDb, updUName, updUId,api} = useContext(Ctx);
 
 
     const handler = e => {
         e.preventDefault();
         if (authType) {
-            let user = db.filter(rec => rec.email === email && rec.pwd === pwd)[0];
-            if (user) {
-                updUName(user.name);
-                updUId(db.findIndex(rec => rec.email === email && rec.pwd === pwd));
-                setEmail("");
-                setName("");
-                setPwd("");
-                setPwd2("");
-                updState(false);
-            } else {
-                alert("Неверные данные пользователя");
-            }
+            api.logIn({
+                email: email,
+                password:pwd
+            })
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data.message);
+                    console.log(data);
+                    if(data.message === "ok"){
+                        updUId(data.data._id);
+                        updUName(data.data.name)
+                        localStorage.setItem("author", data.data.name)
+                        localStorage.setItem("userId", data.data._id)
+                    }
+                    setEmail("");
+                    setName("");
+                    setPwd("");
+                    setPwd2("");
+                    updState(false);
+                    setAuthType(auth);
+                });
+            // let user = db.filter(rec => rec.email === email && rec.pwd === pwd)[0];
+            // if (user) {
+                // updUName(user.name);
+                // updUId(db.findIndex(rec => rec.email === email && rec.pwd === pwd));
+                // setEmail("");
+                // setName("");
+                // setPwd("");
+                // setPwd2("");
+                // updState(false);
+                // setAuthType(auth);
+            // } else {
+            //     alert("Неверные данные пользователя");
+            // }
         } else {
-            let index = db.findIndex(rec => rec.email === email);
-            if (index === -1) {
-                updDb([...db, {
-                    name: name,
-                    pwd: pwd,
-                    email: email
-                }])
-                localStorage.setItem("db", JSON.stringify([...db, {
-                    name: name,
-                    pwd: pwd,
-                    email: email
-                }]))
-                updUName(name)
-                localStorage.setItem("userName", name);
-                updUId(db.length);
-                localStorage.setItem("userId", db.length);
-                setEmail("");
-                setName("");
-                setPwd("");
-                setPwd2("");
-                updState(false);
-            } else {
-                alert("Такой пользователь уже есть");
-            }
+            api.signUp({
+                        name: name,
+                        password: pwd,
+                        email: email
+                    })
+                    .then(res => res.json())
+                    .then(data =>{
+                        console.log(data);
+                        if(data.message === "ok"){
+                            updUId(data.data._id);
+                            localStorage.setItem("userId", data.data._id)
+                        }
+                        setEmail("");
+                        setName("");
+                        setPwd("");
+                        setPwd2("");
+                        updState(false);
+                        setAuthType(auth);
+                    })
+            // let index = db.findIndex(rec => rec.email === email);
+            // if (index === -1) {
+            //     updDb([...db, {
+            //         name: name,
+            //         pwd: pwd,
+            //         email: email
+            //     }])
+            //     localStorage.setItem("db", JSON.stringify([...db, {
+            //         name: name,
+            //         pwd: pwd,
+            //         email: email
+            //     }]))
+            //     updUName(name)
+            //     localStorage.setItem("userName", name);
+            //     updUId(db.length);
+            //     localStorage.setItem("userId", db.length);
+            //     setEmail("");
+            //     setName("");
+            //     setPwd("");
+            //     setPwd2("");
+            //     updState(false);
+            //     setAuthType(auth);
+            // } else {
+            //     alert("Такой пользователь уже есть");
+            // }
         }        
     }
     const changeAuthType = e => setAuthType(!authType)
@@ -110,6 +150,7 @@ export default ({state, auth, updState}) => {
                 setName("");
                 setPwd("");
                 setPwd2("");
+                setAuthType(auth);
             }}>close</button>
 
             <button type="button" onClick={changeAuthType}>{authType ? "Зарегистрироваться" : "Войти"}</button>

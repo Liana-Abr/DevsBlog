@@ -12,7 +12,7 @@ input{
     
 }
 .search {
-    width: 90%;
+    width: 86%;
     height: 50px;
     border-radius: 4px;
     border-color: black;
@@ -24,4 +24,4 @@ input{
     background-color: #1c87c9;
     color:#ffffff;
     cursor: pointer;
-    }
+}
