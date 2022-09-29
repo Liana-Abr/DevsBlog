@@ -5,15 +5,13 @@ export default () => {
     <div>
       <h1>Тут можно создать пост</h1>
       <form className="form-createpost" action="" >
-            <input type="text" name="name" placeholder="Название"  />
+            <input type="text" name="title" placeholder="Заголовок"  />
             <br />
-            <input type="text" name="description" placeholder="Описание"  />
+            <input className="post-text" type="text" name="text" placeholder="Пост"  />
             <br />
-            <input type="url" placeholder="image link" name="img_link" />
+            <input type="url" placeholder="Ссылка на изображение" name="img_link" />
             <br />
-            <input type="text" name="author" placeholder="Автор"  />
-            <br />
-            <input type="text" name="createdAt" placeholder="2022-09-05"  />
+            <input type="text" name="tags" placeholder="Теги" />
             <br />
             <button type="submit">Создать пост</button>
         </form>

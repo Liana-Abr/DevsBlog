@@ -1,11 +1,10 @@
 form {
     width:400px;
-    margin:auto;
 }
 input{
     padding:4px 10px;
     border:0;
-    font-size:16px;
+    font-size:24px;
     box-shadow: 0px 5px 20px #b0b0b0, 
             -5px -5px 60px #ffffff;
     border-radius: 5px;

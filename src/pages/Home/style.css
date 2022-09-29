@@ -1,10 +1,7 @@
 .banner{
-    width: 80%;
-    height: 300px;
-    border-radius: 10px;
-    background-color: lightblue;
-}
-.banner p{
-    font-weight: bold;
-    font-size: 20px;
+    width: 70%;
+    height: 400px;
+    background-image: url("https://neilpatel.com/wp-content/uploads/2018/10/blog.jpg");
+    background-repeat: no-repeat;
+    text-align: center;
 }

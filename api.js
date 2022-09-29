@@ -10,6 +10,20 @@
         posts: Array - массив из id своих постов
     }
 */
+ /*
+        post {
+            _id: String,
+            title: String,
+            author: String - id автора,
+            image: String - ссылка на картинку,
+            isPublished: Boolean - статус поста (открыт для просмотра / закрыт)
+            tags: [String] - список тегов для фильтрации поста
+            createdAt: Date - дата создания (new Date() ) 2022-09-28T18:20
+            updatedAt: Date
+            likes: [String] - id пользователей
+            comments: [String] - id комментария
+        }
+    */
 class Api {
     constructor(){
         this.url = "https://ithub-blog.herokuapp.com/api/"

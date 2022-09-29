@@ -7,7 +7,7 @@ export default () => {
   return (
     <div>
       <h1>Все посты</h1>
-      <input type="text" name="text" className="search" placeholder="поиск постов"/>
+      <input type="text" name="text" className="search" placeholder="Найти пост"/>
       <input type="submit" name="submit" className="submit" value="Найти" />
       
       

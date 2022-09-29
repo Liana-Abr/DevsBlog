@@ -33,23 +33,11 @@ export default () => {
           Все посты
         </Link>
 
-        <Link to="/createpost" className="header__btn">
+        {userId && <Link to="/createpost" className="header__btn">
           Создать пост
-        </Link>
+        </Link>}
 
-        {/* {!userName && <Link to="/profile"  className="header__btn" 
-          onClick={(e)=> {
-            e.preventDefault();
-            
-          }}>
-
-              Профиль
-          </Link>} */}
-
-        {/* <Link to="/profile" className="header__btn">
-          Профиль
-        </Link>
-       */}
+        
         {!userId && <Link to="/login" 
         className="header__btn" 
           onClick={(e)=> {
@@ -70,8 +58,8 @@ export default () => {
               Зарегистрироваться
           </Link>}
 
-          {userId && <a href="/">{userName}</a>}
-          {userId && <a href="/" onClick={logOut}>Log Out</a>}
+          {userId && <Link to="/profile" className="header__btn" >{userName}</Link>}
+          {userId && <a href="/" className="header__btn" onClick={logOut}>Выход</a>}
       </nav>
      
       {<Modal state={modalView} auth={modalAuth} updState={setModal}/>}

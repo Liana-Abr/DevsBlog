@@ -6,12 +6,10 @@ export default () => {
   return (
     <div>
       <div className="banner">
-        <p className="banner-text"> Добро пожаловать в DevsBlog</p>
       </div>
       <h1>Главная страница</h1>
       {/*<Post data={posts} />*/}
-        {/* <h2>Недавние посты</h2>
-        <h2>Популярные посты</h2> */}
+      {/* <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cumque facere sapiente repellendus sed inventore, aliquid eum perferendis beatae id, corrupti sint odio sunt animi.</h1> */}
     </div>
   );
 };

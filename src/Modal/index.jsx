@@ -110,6 +110,7 @@ export default ({state, auth, updState}) => {
                     Повторить пароль (регистрация)
                 */}
                 <input
+                    className="auth-reg-input"
                     type="email"
                     name="email"
                     placeholder="Электронный адрес"
@@ -117,6 +118,7 @@ export default ({state, auth, updState}) => {
                     onChange={(e) => {setEmail(e.target.value)}}
                 />
                 {!authType && <input 
+                    className="auth-reg-input"
                     type="text"
                     name="name"
                     value={name}
@@ -124,6 +126,7 @@ export default ({state, auth, updState}) => {
                     onChange={(e) => {setName(e.target.value)}}
                 />}
                 <input 
+                    className="auth-reg-input"
                     type="password"
                     name="pwd"
                     placeholder="Пароль"
@@ -131,6 +134,7 @@ export default ({state, auth, updState}) => {
                     onChange={(e) => {setPwd(e.target.value)}}
                 />
                 {!authType && <input 
+                    className="auth-reg-input"
                     type="password"
                     placeholder="Повторить пароль"
                     value={pwd2}

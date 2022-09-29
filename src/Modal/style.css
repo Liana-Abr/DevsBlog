@@ -12,11 +12,12 @@
 .modal {
   background-color: #fff;
   padding: 20px;
-  width: 16%;
+  width: 20%;
   border-radius: 10px;
 }
 [type="submit"]{
-  width: auto;
+  width: 85%;
+  margin: 5px;
   background-color: rgb(26, 151, 224);
   color: white;
   border: none;
@@ -26,4 +27,7 @@
 input{
   padding: 10px 18px;
   margin: 10px;
+}
+.auth-reg-input{
+  margin-bottom: 20px;
 }
