@@ -10,6 +10,11 @@ export const App = () => {
   const [userId,setUserId] = useState(localStorage.getItem("userId") || "");
   const [userName,setUserName] = useState(localStorage.getItem("author") || "");
 
+  const [postText, setPText] = useState(localStorage.getItem("postText") || "[]");
+  const [postTitle, setPTitle] = useState(localStorage.getItem("postTitle") || "");
+  const [postImg, setPImg] = useState(localStorage.getItem("postImg") || "");
+
+
   return (
     <Ctx.Provider value={{
       db: db,
@@ -18,11 +23,21 @@ export const App = () => {
       api: new Api(),
       updDb: updDb,
       updUId: setUserId,
-      updUName: setUserName
+      updUName: setUserName,
+      //пост
+      // postId: postId,
+      postTitle: setPTitle,
+      postText: setPText,
+      postImg: setPImg,
+      // updPId: setPostsId,
+      updPTitle: setPTitle,
+      updPText: setPText,
+      updPImg: setPImg
+    
 
     }}>
       <Header />
-      <Main/>
+      <Main />
       <Footer />
     </Ctx.Provider>
   );

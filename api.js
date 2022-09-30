@@ -26,7 +26,7 @@
     */
 class Api {
     constructor(){
-        this.url = "https://ithub-blog.herokuapp.com/api/"
+        this.url = "https://ithub-blog.herokuapp.com/api/";
     }
     //получить всех пользователи в блоге
     getUsers(){

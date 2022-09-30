@@ -7,6 +7,7 @@ export default ({state, auth, updState}) => {
     const [email, setEmail] = useState("");
     const [pwd, setPwd] = useState("");
     const [pwd2, setPwd2] = useState("");
+    
     const [authType,setAuthType] = useState(auth);
     const {db, updDb, updUName, updUId,api} = useContext(Ctx);
 

@@ -21,3 +21,16 @@
 .post-text{
     height: 150px;
 }
+.form-img {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #0081ff;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
