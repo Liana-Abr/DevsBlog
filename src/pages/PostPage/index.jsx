@@ -67,12 +67,6 @@ const PostPage = () => {
                                     })
                                 }
                             </div>
-                            <form className="post-page__form" onSubmit={handlerComment}>
-                                <h2 className="post-page__form-title">Comments</h2>
-                                <input className="post-page__input" minLength={10} type="text" onChange={(e) => { setComment(e.target.value) }} placeholder="Your comment" />
-                                <button className="post-page__btn" type="submit">Отправить</button>
-                            </form>
-
 
                         </>
 

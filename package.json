@@ -1,4 +1,5 @@
 {
+	"homepage": "https://liana-abr.github.io/DevsBlog",
 	"name": "react-example",
 	"version": "1.0.0",
 	"main": "index.js",
@@ -6,9 +7,12 @@
 	"scripts": {
 		"editorconfig": "editorconfig-checker",
 		"test": "npm run editorconfig",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"build:prod": "rimraf ./docs && webpack --mode production --config webpack.config.js",
 		"build:dev": "rimraf ./docs && webpack --mode development --config webpack.config.js",
 		"start": "webpack serve"
+
 	},
 	"dependencies": {
 		"core-js": "^3.21.1",
@@ -25,6 +29,7 @@
 		"babel-loader": "^8.2.3",
 		"css-loader": "^6.6.0",
 		"editorconfig-checker": "^4.0.2",
+		"gh-pages": "^4.0.0",
 		"html-webpack-plugin": "^5.5.0",
 		"rimraf": "^3.0.2",
 		"sass-loader": "^12.6.0",
