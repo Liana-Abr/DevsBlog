@@ -1,16 +1,47 @@
-/* 
-    user{
-        _id: - уникальный ключ пользователя для взаимодействия(+localStorage)
-        name: "" /String
-        password: string,
-        image: string - ссылка на картинку из открытого источника
-        email: string - чувствителен к регистру
-        description string - описание
-        favorites: Array - массив из id любимых постов
-        posts: Array - массив из id своих постов
+class Api {
+    constructor() {
+        this.url = "https://ithub-blog.herokuapp.com/api/"
     }
-*/
- /*
+    getUsers() {
+        return fetch(`${this.url}users`)
+    }
+    getUser(id) {
+        return fetch(`${this.url}users/${id}`)
+    }
+    getPersonInfo(id) { // информация о себе
+        return fetch(`${this.url}users/me/${id}`)
+    }
+    setPersonInfo(id, body) { // можно поменять имя, описание, изображение
+        return fetch(`${this.url}users/update/${id}`, { // нельзя меня почту и пароль!!!
+            method: "PUT",
+            header: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+    }
+    signUp(body) { // email и password required!
+        return fetch(`${this.url}users/add`, {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+    }
+    logIn(body) { // email и password only
+        return fetch(`${this.url}users/auth`, {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+    }
+    /*
         post {
             _id: String,
             title: String,
@@ -24,67 +55,15 @@
             comments: [String] - id комментария
         }
     */
-class Api {
-    constructor(){
-        this.url = "https://ithub-blog.herokuapp.com/api/";
-    }
-    //получить всех пользователи в блоге
-    getUsers(){
-        return fetch(`${this.url} users`)
-    }
-    //один пользователь
-    getUser(id){
-        return fetch(`${this.url}users/${id}`)
-    }
-    //информация о себе 
-    getPersonInfo(){
-        return fetch(`${this.url}users/me/${id}`)
-    }
-    //изменение данных пользователя(имя, описание, изображение) нельзя менять почту и пароль
-    setPersonInfo(id,body){
-        return fetch(`${this.url}users/update/${id}`,{
-            method: "PUT",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        })
-    }
-    //email и password required
-    signUp(body){
-        return fetch(`${this.url}users/add`,{
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        })
-    }
-     //email и password only
-    logIn(body){
-        return fetch(`${this.url}users/auth`,{
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        })
-    }
-    //когда грузится главная страница
-    getPosts(){
+    getPosts() { // когда грузится главная страница
         return fetch(`${this.url}posts`)
     }
-    //когда я авторизован и хочу добавить пост
-    getPost(id){
+    getPost(id) { // в момент открытия страницы с постом
         return fetch(`${this.url}posts/${id}`)
     }
-    //когда я авторизован и хочу добавить пост 
-    addPost(body){
-        return fetch(`${this.url}posts/add`,{
-            method:"POST",
+    addPost(body) { // когда я авторизован и хочу добавить пост
+        return fetch(`${this.url}posts/add`, {
+            method: "POST",
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
@@ -92,7 +71,6 @@ class Api {
             body: JSON.stringify(body)
         })
     }
-    //если автор поста - пользователь сайта(я), на странице с постом изменить свой пост 
     updatePost(id, body) { // если автор поста - пользователь сайта (я), на странице с постом изменять свой пост (можно в личном кабинете).
         return fetch(`${this.url}posts/update/${id}`, {
             method: "PUT",
@@ -109,4 +87,5 @@ class Api {
         })
     }
 }
+
 export default Api;

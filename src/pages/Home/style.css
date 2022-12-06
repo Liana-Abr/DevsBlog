@@ -1,7 +1,9 @@
+body{
+    background-color: #faf4e9;
+}
 .banner{
     width: 70%;
     height: 400px;
-    background-image: url("https://neilpatel.com/wp-content/uploads/2018/10/blog.jpg");
-    background-repeat: no-repeat;
-    text-align: center;
+    border-radius: 10px;
+    background: url("http://www.insidestylists.com/wp-content/uploads/2018/01/blogging-wide-banner.jpg") center / cover no-repeat;
 }
