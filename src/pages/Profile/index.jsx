@@ -39,104 +39,22 @@ export default () => {
     }
 
 
-
-//поставить автар
-    const setUserAvatar = (e) => {
-        setImg(e.target.value);
-        e.target.parentElement.style.backgroundImage = `url(${e.target.value})`;
-    }
-//отменить изменение
-    const returnAvatar = (e) => {
-        updateImg(false);
-        setImg("");
-        e.target.style.backgroundImage = `url(${profile.avatar})`;
-    }
-
-
-    const nameChange = () => {
-        updateName(false);
-        if (name !== profile.name) {
-            api.setPersonInfo({name: name, about: profile.about})
-                .then(res => res.json())
-                .then(ans => {
-                    // console.log(ans);
-                })
-            setProfile(prev => {
-                prev.name = name;
-                return prev;
-            });
-        }
-    }
-
-//изменение данных профиля(имя, описание)
-    const aboutChange = () => {
-        updateAbout(false);
-        if (about !== profile.about) {
-            api.setPersonInfo({name: profile.name, about: about})
-                .then(res => res.json())
-                .then(ans => {
-                    // console.log(ans);
-                })
-            setProfile(prev => {
-                prev.about = about;
-                return prev;
-            });
-        }
-    }
-
-
-
-
-
-
-
-
-
-
     return (
         <div>
             <h1>Мой профиль</h1>
             <div className="profile-container">
                 <div className="profile-img" style={{backgroundImage: `url(${profile.avatar})`}}>
-                    {!changeImg && <i className="bi bi-pen" onClick={() => updateImg(true)}/>}
-                    {changeImg && <>
-                        <input value={img} onChange={setUserAvatar}/>
-                        <i className="bi bi-check2-circle" onClick={imgChange}/>
-                        <i className="bi bi-x-circle" onClick={returnAvatar}/>
-                    </>}
                 </div>
-
-                {!changeName
-                    ? <div className="profile-username">
+                    <div className="profile-username">
                         <h1>{userName || ""}</h1>
-                        <i className="bi bi-pen" onClick={() => updateName(true)}/>
-                    </div>
-                    : <div className="profile-username">
-                        <input value={userName} onInput={e => setName(e.target.value)}/>
-                        <i className="bi bi-check2-circle" onClick={nameChange}/>
-                    </div>
-                }
 
-                <div className="profile-email">
-                    {email}
-                </div>
+                    </div>
                 <div className="profile-decription">
-                    {
-                        !changeAbout
-                            ? <>
-                                <p>{profile.about || ""}</p>
-                                <i className="bi bi-pen" onClick={() => updateAbout(true)}/>
-                            </>
-                            : <>
-                                <input value={about} onInput={e => setAbout(e.target.value)}/>
-                                <i className="bi bi-check2-circle" onClick={aboutChange}/>
-                            </>
-                    }
+
                 </div>
             </div>
             <div className="profile-post-container">
-                <h2>Посты</h2>
-                {/* <Post data={posts}/> */}
+
             </div>
         </div>
     );

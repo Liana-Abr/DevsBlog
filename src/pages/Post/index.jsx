@@ -1,40 +1,20 @@
 import React from "react";
 import "./style.css";
-import { Ctx } from "../../App";
+import { Link } from 'react-router-dom';
 
+const Post = ({ post }) => {
 
-//массив из сервера вывести 
-export default ({ data }) => {
-  return (
-    <div>
-      <div className="cards">
-        {data.map((post) => (
-          <div
-            className="post"
-            key={post.name}
-            // style={{
-            //   backgroundImage: `url(${post.image})`,
-            // }}
-          >
-          <div className="post__block">
-            <div className="post-card__pic" style={{backgroundImage: post.image && `url(${post.image})`}}>
+    return (
+        <div className="post">
+            <img className="post__image" src={post.image !== undefined ? post.image : "https://media.istockphoto.com/id/1399859917/vector/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-moment-placeholder.jpg?b=1&s=170667a&w=0&k=20&c=jBE3Ul6LpRXO5UhCYTmLArfdFc6YEWwhzarxTmtZI2U="} />
+            <div className="post__wrapper">
+                <h3 className="post__title">
+                    <Link to={`/post/${post._id}`}>{post.title}</Link>
+                </h3>
 
-              </div>
-                <span>{post.name}</span>
-                <span>{post.author}</span>
-              </div>
-
-              <div className="post__block">
-                {post.description
-                  .split(".")
-                  .map(
-                    (p, i, arr) =>
-                      i !== arr.length - 1 && <p key={i}>{p + "."}</p>
-                  )}
-              </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 };
+
+export default Post;
