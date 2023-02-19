@@ -59,7 +59,7 @@ const PostPage = () => {
                 {
                     isLoad ?
                         <>
-                            <img className="post-page__img" src={data.image !== undefined ? data.image : "https://i.pinimg.com/564x/7b/e1/99/7be19963bc1ab28a41cbed7d07bd3594.jpg"} alt={data.title} />
+                            <img className="post-page__img" src={data.image !== undefined ? data.image : "https://media.istockphoto.com/id/1399859917/vector/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-moment-placeholder.jpg?b=1&s=170667a&w=0&k=20&c=jBE3Ul6LpRXO5UhCYTmLArfdFc6YEWwhzarxTmtZI2U="} alt={data.title} />
                             <div className="post-page__block">
                                 {
                                     data.tags.map((el, index) => {
