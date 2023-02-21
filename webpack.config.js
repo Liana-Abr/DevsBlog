@@ -13,6 +13,7 @@ module.exports = {
 		port: 8080, // порт, чтобы открывать сайт по адресу localhost:8080, но можно поменять порт
 		open: true, // сайт будет открываться сам при запуске npm run dev
 		hot: true,
+		historyApiFallback: true
 	},
 	mode: "development",// по умолчанию webpack миницифирует скрипты, чтобы это избежать меням режим
 	//Нужно помочь вебпаку научится работать с jsx  файлами для этого используют babel loader
