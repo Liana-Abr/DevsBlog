@@ -1,6 +1,6 @@
 {
-	"homepage": "https://liana-abr.github.io/DevsBlog",
 	"name": "react-example",
+	"homepage": "http://liana-abr.github.io/devsblog",
 	"version": "1.0.0",
 	"main": "index.js",
 	"license": "MIT",
@@ -12,7 +12,6 @@
 		"build:prod": "rimraf ./docs && webpack --mode production --config webpack.config.js",
 		"build:dev": "rimraf ./docs && webpack --mode development --config webpack.config.js",
 		"start": "webpack serve"
-
 	},
 	"dependencies": {
 		"core-js": "^3.21.1",
