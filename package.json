@@ -9,8 +9,7 @@
 		"test": "npm run editorconfig",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build",
-		"build:prod": "rimraf ./docs && webpack --mode production --config webpack.config.js",
-		"build:dev": "rimraf ./docs && webpack --mode development --config webpack.config.js",
+		"build": "webpack --config webpack.config.js",
 		"start": "webpack serve"
 	},
 	"dependencies": {
