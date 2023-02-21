@@ -3,7 +3,11 @@ body{
 }
 .banner{
     width: 70%;
+    margin: 20px;
     height: 400px;
     border-radius: 10px;
-    background: url("http://www.insidestylists.com/wp-content/uploads/2018/01/blogging-wide-banner.jpg") center / cover no-repeat;
+    background: url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80") center / cover no-repeat;
+}
+ul{
+    font-size: 25px;
 }

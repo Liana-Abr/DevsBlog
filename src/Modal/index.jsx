@@ -36,19 +36,7 @@ export default ({state, auth, updState}) => {
                     updState(false);
                     setAuthType(auth);
                 });
-            // let user = db.filter(rec => rec.email === email && rec.pwd === pwd)[0];
-            // if (user) {
-                // updUName(user.name);
-                // updUId(db.findIndex(rec => rec.email === email && rec.pwd === pwd));
-                // setEmail("");
-                // setName("");
-                // setPwd("");
-                // setPwd2("");
-                // updState(false);
-                // setAuthType(auth);
-            // } else {
-            //     alert("Неверные данные пользователя");
-            // }
+    
         } else {
             api.signUp({
                         name: name,

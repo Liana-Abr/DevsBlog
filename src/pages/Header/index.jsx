@@ -58,7 +58,7 @@ export default () => {
               Зарегистрироваться
           </Link>}
 
-          {userId && <Link to="/profile" className="header__btn" >{userName}</Link>}
+          {userId && <Link to="/profile" className="header__btn" >Профиль</Link>}
           {userId && <a href="/" className="header__btn" onClick={logOut}>Выход</a>}
       </nav>
      
