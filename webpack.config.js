@@ -10,10 +10,10 @@ module.exports = {
 	devServer: {
 		static: path.resolve(__dirname, './docs'), // путь, куда "смотрит" режим разработчика
 		compress: true, // это ускорит загрузку в режиме разработки
+		historyApiFallback: true,
 		port: 8080, // порт, чтобы открывать сайт по адресу localhost:8080, но можно поменять порт
 		open: true, // сайт будет открываться сам при запуске npm run dev
-		hot: true,
-		historyApiFallback: true
+		hot: true
 	},
 	mode: "development",// по умолчанию webpack миницифирует скрипты, чтобы это избежать меням режим
 	//Нужно помочь вебпаку научится работать с jsx  файлами для этого используют babel loader
