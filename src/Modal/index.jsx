@@ -149,17 +149,19 @@ export default ({state, auth, updState}) => {
                     {authType ? "Войти" : "Зарегистрироваться"}
                 </button>
             </form>
-            <button type="button" onClick={() =>{
-                updState(!state)
-                setEmail("");
-                setName("");
-                setPwd("");
-                setPwd2("");
-                setAuthType(auth);
-            }}>close</button>
-
-            <button type="button" onClick={changeAuthType}>{authType ? "Зарегистрироваться" : "Войти"}</button>
-
+            <div className="btn-secondary">
+                <button type="button" className="btn-reg" onClick={changeAuthType}>{authType ? "Зарегистрироваться" : "Войти"}</button>
+                <button type="button" className="btn-close" onClick={() =>{
+                                updState(!state)
+                                setEmail("");
+                                setName("");
+                                setPwd("");
+                                setPwd2("");
+                                setAuthType(auth);
+                            }}>X
+                </button> 
+            </div>
+           
         </div>
     </div>
 }
